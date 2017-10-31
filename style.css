@@ -3,18 +3,55 @@ body {
 	text-align: left;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size:18px;
-	margin:0;
+	line-height: 1.5;
+	margin:0 auto;
 	padding: 0;
 	height:100%;
 	width:100%;
 }
 
 #container1 {
-	width: 100%;
-	margin: 0 auto;padding-top:50%;
-	border: 1px solid #ccc;
+	width: 99.9%;
+	height: 70%;
+	margin: 0 auto;
+	padding-top: 10%;
+	border: none;
 	background-repeat: no-repeat;
 	background-image: url("headimage1.jpg");
-	background-position: 50% bottom;
-	background-size: contain;
+	background-position: 50%;
+	background-size: cover;
+}
+
+#container1 p {
+	color: white;
+	font-family: 'Merriweather', serif;
+	font-size: 70px;
+	margin: 5%;
+	padding-bottom: 15%;
+
+}
+
+#container2 {
+	width: 99.9%;
+	height: 30%;
+	margin: 0 auto;
+	padding-top: 10%;
+	border: none;
+	background-repeat: no-repeat;
+	background-image: url("headimage1.jpg");
+	background-position: 50%;
+	background-size: cover;
+
+}
+
+#container3 {
+	width: 99.9%;
+	height: 20%;
+	margin: 0 auto;
+	padding-top: 10%;
+	border: none;
+	background-repeat: no-repeat;
+	background-image: url("example.jpg");
+	background-position: 50%;
+	background-size: cover;
 }
