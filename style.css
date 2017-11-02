@@ -1,10 +1,23 @@
+.nav {
+    position: fixed;
+    top: 0;
+    height: 30px;
+    width: 100%;
+    overflow:hidden;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
 body {
 	background:white;		
 	text-align: left;
 	font-family: 'Lato', sans-serif;
 	font-size:18px;
 	line-height: 1.2;
-	margin:0 auto;
+	margin:0 0 100px;
 	padding: 0;
 	height:100%;
 	width:100%;
@@ -19,10 +32,7 @@ body h1 {
 body h2{
 	font-family: 'Lato', sans-serif;
 	padding-left: 50px;
-}
-
-p {
-	padding-left: 50px;
+	font-size: 20px;
 }
 
 iframe {
@@ -30,12 +40,86 @@ iframe {
 	padding:0;
 }
 
+.nav ul {
+  background-color: white;
+  list-style: none;
+  text-align: right;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  height: 30px;
+  border-bottom: 1px solid #888;
+  display: inline-block;
+  margin-right: -4px;
+  text-align: center;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #064558;
+  color: white;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+}
+
+table#menu {
+	width:100%;
+	margin: 0px auto;
+}
+
+td#menu {
+	padding: 0px;
+	width:50%;
+	text-align: left;
+}
+
+table#content {
+	margin-left: 50px;
+	width: 80%;
+	border: 0px solid grey;
+	border-collapse: collapse;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+tr#content {
+	border-top: 1px double #046C8B;
+}
+td, th{
+	padding: 15px;
+	width: 50%;
+	text-align: center;
+	font-size: 13px;
+}
 
 #container1 {
 	width: 99.9%;
 	height: 70%;
 	margin: 0 auto;
-	padding-top: 10%;
+	padding-top: 0.1%;
 	border: none;
 	background-repeat: no-repeat;
 	background-image: url("headimage1.jpg");
@@ -53,15 +137,15 @@ iframe {
 }
 
 #container1b {
-	width: 100%;
+	width: 85%;
 	height: 40%;
 	margin: 0 auto;
-	padding-top: 15%;
+	padding-top: 0%;
 	border: none;
 	background-repeat: no-repeat;
 	background-image: url("Location1.jpg");
 	background-position: 50% 50%;
-	background-size: cover;
+	background-size: contain;
 }
 
 
@@ -75,13 +159,39 @@ iframe {
 }
 
 #container3 {
-	width: 80%;
+	width: 60%;
 	height: 40%;
 	margin: 0 auto;
-	padding-top: 20%;
+	padding-top: 5%;
 	border: none;
 	background-repeat: no-repeat;
 	background-image: url("test3.png");
 	background-position: 50% 50%;
 	background-size: contain;
+}
+
+#container4 {
+	width: 90%;
+	height: 40%;
+	margin: 0 auto;
+	padding-top: 5%;
+	border: none;
+	background-repeat: no-repeat;
+	background-image: url("Render.jpg");
+	background-position: 0% 50%;
+	background-size: contain;
+}
+
+#map { position:absolute; top:0; bottom:0; width:75%; }
+
+footer {
+    background-color: #064558;
+    color: white;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+    padding-left: 50px;
 }
