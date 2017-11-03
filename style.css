@@ -255,8 +255,9 @@ td, th{
 
 
 footer {
-    background-color: #064558;
-    color: white;
+    background-color: white;
+    color: black;
+    font-size: 12px;
     position: relative;
     left: 0;
     bottom: 0;
