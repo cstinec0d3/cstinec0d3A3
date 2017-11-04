@@ -3,22 +3,24 @@
 	<head>
 
 		<meta charset='utf-8' />
-		<title>Age0014</title>
+		<title>Mapping</title>
 		<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-		<link href="Style.css" rel="stylesheet" type="text/css" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro" rel="stylesheet">
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
 		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
-		<script src='./data2.js'></script>
+		<script src='./data.js'></script>
 		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 		<style>
 			body { margin:0; padding:0; }
 		</style>
 
-		<div class='nav' style='position: fixed;top:0;width: 100%'>
+		<div class='nav'>
 			<ul>
-				<li><a href='index.html'>HOME</a></li>
-				<li><a href='#'>MAPPING</a></li>
+				<li><a href='#'>HOME</a></li>
+				<li><a href='mapping.html'>MAPPING</a></li>
 			</ul>
+		</div>
+
 
 	</head>
 
@@ -32,9 +34,9 @@
 			mapboxgl.accessToken = 'pk.eyJ1IjoiY3N0aW5lYzBkMyIsImEiOiJjajZ2bmF5azAxNmdoMndvM2k1MDNsN2RqIn0.JPqdPBANiRzLyj4ZamgATQ';
 			var map = new mapboxgl.Map({
 				container: 'map',
-				style: 'mapbox://styles/cstinec0d3/cj6vncbfr8cro2rqsw3m1u7ue',
-				center: [151.139,-33.849],
-				zoom: 9.2,
+				style: 'mapbox://styles/cstinec0d3/cj9kkv1n90nyj2rp9hljx2cfr',
+				center: [151.320,-33.720],
+				zoom: 12,
 				pitch: 40,
 				bearing: 20
 			});
@@ -48,33 +50,23 @@
             // Geojson Data source used in vector tiles, documented at
             // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
             'type': 'geojson',
-            'data': data2
+            'data': data
         },
         'paint': {
             // See the Mapbox Style Spec for details on property functions
+            // 'fill-color': 'green',
             // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
             'fill-extrusion-color': {
                 // Get the fill-extrusion-color from the source 'color' property.
-                'property': '16_0014',
-                "stops": [
-                [0, '#003480'],
-                [15000, '#FFF779']
-                ]
-
+                'property': 'colour',
+                'type': 'identity'
             },
             'fill-extrusion-height': {
                 // Get fill-extrusion-height from the source 'height' property.
-                'property': 'growth0014',
-                "stops": [
-                [0, 0],
-                [1, 5000]
-                ]
-                
-            },
-            'fill-extrusion-base': {
-                // Get fill-extrusion-base from the source 'base_height' property.
-                'property': 'base_height',
+               'property': 'height',
                 'type': 'identity'
+         
+       
             },
             // Make extrusions slightly opaque for see through indoor walls.
             'fill-extrusion-opacity': 0.9
@@ -82,11 +74,6 @@
     });
 			});
 		</script>
-
-
-		<sidebar>
-
-		</sidebar>
 
 
 		</body>

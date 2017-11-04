@@ -5,7 +5,12 @@
 		<title>cstine&ampben A3</title>
 		<link href="style.css" rel="stylesheet" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Lato|Merriweather" rel="stylesheet">
-		
+				<meta charset='utf-8' />
+				<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+		<script src='./data.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
 
 		<div class='nav'>
 			<ul>
@@ -37,7 +42,7 @@
 
 			<table id="content">
 				<tr id='content'>
-					<td>Locations under threat of being inundated include:<br/>1) Sydney Airport, 2) Byron Bay, and 3) Sydney's Northern Beaches</td>
+					<td>Locations under threat of being inundated include:<br/> 1) Byron Bay, and 2) Sydney's Northern Beaches and 3) Botany Bay, Sydney Airport </td>
 					<td>Climate experts have said rising sea levels can displace more than 200 thousand people</td>
 				</tr>
 				<tr id='content'>
@@ -97,7 +102,17 @@
 			</div>
 		</div>
 
-<h1> Steps to combat Sea Level Rise </h1>
+<h1> The Solution Proposal </h1>
+<h2> The threefold design solution to combat sea level rise </h2>
+<table id="content">
+		<tr id='content'>
+			<td>The rising sea levels are fast becoming an overwhelming force for Sydney’s coastal. Our design confronts this issue through a practical yet still distinctive approach in order to better the future for life on Sydney’s magnificent coastline. <br> Our proposal is threefold: the initial solution of a dam wall provides the foundation to integrate the ancillary road and terraced farm idea to nurture the reenvisioning of a coastal lifestyle.</td>
+		</tr>
+		<tr id='content'>
+			<td></td>
+		</tr>
+	</table>
+
 
 
 <div id="container3">
@@ -105,6 +120,72 @@
 
 <div id="container4">
 </div>
+
+
+
+<h1> Mapping the Sea Wall </h1>
+<table id="content">
+		<tr id='content'>
+			<td>The wall aims to span 20km across Collaroy beach </td>
+		</tr>
+		<tr id='content'>
+			<td></td>
+		</tr>
+	</table>
+
+
+	<div id='map'>
+		</div>
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiY3N0aW5lYzBkMyIsImEiOiJjajZ2bmF5azAxNmdoMndvM2k1MDNsN2RqIn0.JPqdPBANiRzLyj4ZamgATQ';
+			var map = new mapboxgl.Map({
+				container: 'map',
+				style: 'mapbox://styles/cstinec0d3/cj9kkv1n90nyj2rp9hljx2cfr',
+				center: [151.320,-33.720],
+				zoom: 12,
+				pitch: 40,
+				bearing: 20
+			});
+
+			map.on('load', function() {
+
+				map.addLayer({
+					'id': 'room-extrusion',
+					'type': 'fill-extrusion',
+					'source': {
+            // Geojson Data source used in vector tiles, documented at
+            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            // See the Mapbox Style Spec for details on property functions
+            // 'fill-color': 'green',
+            // https://www.mapbox.com/mapbox-gl-style-spec/#types-function
+            'fill-extrusion-color': {
+                // Get the fill-extrusion-color from the source 'color' property.
+                'property': 'colour',
+                'type': 'identity'
+            },
+            'fill-extrusion-height': {
+                // Get fill-extrusion-height from the source 'height' property.
+               'property': 'height',
+                'type': 'identity'
+         
+       
+            },
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.9
+        }
+    });
+			});
+		</script>
+
+
+
+
+
+
 
 
 
